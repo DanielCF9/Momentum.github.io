@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momentum</title>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/main.css">
+
+
+</head>
+
+<body class="bg-[var(--bg-main)] text-[var(--text-main)] transition-colors duration-300">
+
+
+    <header class="sticky top-0 z-50 transition-colors duration-300">
+        <nav class="flex items-center justify-between p-4 lg:px-8">
+
+            <!-- Logo -->
+            <div class="flex lg:flex-1">
+                <a href="index.html" class="-m-1.5 p-1.5 flex items-center gap-2">
+
+                    <span class="sr-only text-lg font-semibold text-[var(--text-main)]">Momentum</span>
+
+                    <!-- Logo Momentum -->
+                    <div class="flex items-center gap-2">
+
+                        <svg class="h-8 w-8 text-[var(--primary)]" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+
+                            <!-- Círculo: sistema / continuidad -->
+                            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" />
+
+                            <!-- Línea ascendente: crecimiento -->
+                            <path d="M7 15L11 11L14 13L17 9" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+
+                        </svg>
+
+
+                    </div>
+
+                    <!-- Nombre opcional -->
+                    <span class="font-semibold text-[var(--text-main)]">
+                        Momentum
+                    </span>
+
+                </a>
+            </div>
+
+            <!-- Botón hamburguesa (móvil) -->
+            <div class="flex lg:hidden">
+                <button id="menuToggle"
+                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-[var(--text-main)]">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6">
+                        <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Menú principal (desktop) -->
+            <div class="hidden lg:flex lg:gap-x-12">
+                <a href="/index.html" class="text-sm font-semibold text-[var(--text-main)]">Servicios</a>
+                <a href="/index.html#beneficios" class="text-sm font-semibold text-[var(--text-main)]">Beneficios</a>
+                <a href="/index.html#casos" class="text-sm font-semibold text-[var(--text-main)]">Casos</a>
+                <a href="nosotros.html" class="text-sm font-semibold text-[var(--text-main)]">Nosotros</a>
+            </div>
+
+            <!-- Botones y toggle tema (desktop) -->
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-4">
+                <a href="/contacto.html" class="text-sm font-semibold text-[var(--text-main)]">
+                    Reservar →
+                </a>
+
+                <!-- Toggle tema -->
+                <button id="themeToggle" class="flex items-center justify-center w-10 h-10 rounded-full 
+            border border-[var(--border-soft)] hover:bg-[var(--bg-card)] transition">
+                    <span id="themeIcon">🌙</span>
+                </button>
+            </div>
+
+        </nav>
+
+        <!-- Menú móvil -->
+        <div id="mobile-menu" class="lg:hidden hidden px-4 pt-2 pb-4 space-y-1 border-t border-[var(--border-soft)]">
+            <a href="/index.html" class="block text-sm font-semibold text-[var(--text-main)]">Servicios</a>
+            <a href="/index.html#beneficios" class="block text-sm font-semibold text-[var(--text-main)]">Beneficios</a>
+            <a href="/index.html#casos" class="block text-sm font-semibold text-[var(--text-main)]">Casos</a>
+            <a href="/nosotros.html" class="block text-sm font-semibold text-[var(--text-main)]">Nosotros</a>
+            <a href="/contacto.html" class="block text-sm font-semibold text-[var(--text-main)]">Reservar →</a>
+        </div>
+    </header>
+
+
+    <!-- Hero -->
+    <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Grid -->
+        <div class="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
+            <div>
+                <h1 class="block text-3xl font-bold text-foreground sm:text-4xl lg:text-6xl lg:leading-tight">Da el
+                    primer paso hacia una presencia digital más fuerte con <span class="text-gradient">Momentum</span>
+                </h1>
+                <p class="mt-3 text-lg text-foreground">
+                    Servicios de marketing digital para negocios que buscan presencia, posicionamiento y gestión
+                    estratégica de campañas.</p>
+
+                <!-- Buttons -->
+                <div class="mt-7 grid gap-3 w-full sm:inline-flex">
+                    <a href="contacto.html" class="group relative inline-flex items-center justify-center gap-3 px-8 py-4 
+                        rounded-full font-semibold text-white
+                        bg-[var(--primary)] 
+                        shadow-lg shadow-[var(--primary)]/30
+                        transition-all duration-300
+                        hover:scale-105 hover:shadow-xl hover:shadow-[var(--primary)]/40
+                        active:scale-95">
+
+                        <span class="relative z-10">
+                            Iniciar estrategia
+                        </span>
+
+                        <svg class="relative z-10 size-5 transition-transform duration-300 group-hover:translate-x-1"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6" />
+                        </svg>
+
+                        <!-- Efecto de brillo suave -->
+                        <span class="absolute inset-0 rounded-full bg-white/10 opacity-0 
+                        group-hover:opacity-100 transition-opacity duration-300">
+                        </span>
+                    </a>
+                </div>
+                <!-- End Buttons -->
+
+                <!-- Confianza minimal integrada -->
+                <div class="mt-10 flex flex-wrap items-center justify-center gap-8 text-sm text-[var(--text-muted)]">
+
+                    <div class="flex items-center gap-2">
+                        <span class="text-[var(--primary)] font-semibold">+30</span>
+                        <span>proyectos estratégicos</span>
+                    </div>
+
+                    <div class="w-1 h-1 bg-[var(--text-muted)] rounded-full opacity-40"></div>
+
+                    <div class="flex items-center gap-2">
+                        <span class="text-[var(--primary)] font-semibold">+120%</span>
+                        <span>incremento promedio en conversión</span>
+                    </div>
+
+                    <div class="w-1 h-1 bg-[var(--text-muted)] rounded-full opacity-40"></div>
+
+                    <div class="flex items-center gap-2">
+                        <span class="text-[var(--primary)] font-semibold">SEO · Ads · Automatización</span>
+                    </div>
+
+                </div>
+            </div>
+            <!-- End Col -->
+
+            <div class="relative ms-4">
+                <img class="w-full rounded-md"
+                    src="https://images.unsplash.com/photo-1665686377065-08ba896d16fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&h=800&q=80"
+                    alt="Hero Image">
+                <div
+                    class="absolute inset-0 -z-1 bg-linear-to-tr from-surface-1 via-transparent to-travia-transparent size-full rounded-md mt-4 -mb-4 me-4 -ms-4 lg:mt-6 lg:-mb-6 lg:me-6 lg:-ms-6">
+                </div>
+
+
+                <!-- End SVG-->
+            </div>
+            <!-- End Col -->
+        </div>
+        <!-- End Grid -->
+    </div>
+    <!-- End Hero -->
+
+
+    <!-- desafios -->
+
+    <section class="py-24 bg-[var(--bg-card)]" id="desafios">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold">
+                    ¿Qué está frenando el crecimiento?
+                </h2>
+                <p class="mt-6 text-lg text-[var(--text-muted)] max-w-2xl mx-auto">
+                    La mayoría no falla por esfuerzo, sino por falta de estrategia.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+
+                <div class="glass p-8">
+                    <h3 class="text-xl font-semibold mb-3">Publicidad sin dirección</h3>
+                    <p class="text-[var(--text-muted)]">
+                        Acciones aisladas sin un sistema integral.
+                    </p>
+                </div>
+
+                <div class="glass p-8">
+                    <h3 class="text-xl font-semibold mb-3">Falta de posicionamiento</h3>
+                    <p class="text-[var(--text-muted)]">
+                        Una identidad clara que diferencie tu marca.
+                    </p>
+                </div>
+
+                <div class="glass p-8">
+                    <h3 class="text-xl font-semibold mb-3">Resultados inconsistentes</h3>
+                    <p class="text-[var(--text-muted)]">
+                        Sin estrategia continua que convierta visibilidad en clientes.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- solucion -->
+    <section class="py-24 bg-[var(--bg-main)] transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <!-- Título -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-[var(--text-main)]">
+                    Un sistema claro, sin ruido, sin acciones sueltas.
+                </h2>
+                <p class="mt-6 text-lg text-[var(--text-muted)] max-w-2xl mx-auto">
+                    Momentum transforma tu marketing en un proceso estratégico
+                    que conecta dirección, identidad y crecimiento.
+                </p>
+            </div>
+
+            <!-- Grid 3 columnas -->
+            <div class="grid md:grid-cols-3 gap-10">
+
+                <!-- 1 -->
+                <div class="glass rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978" alt="Estrategia de marketing"
+                        class="w-full h-56 object-cover" />
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold mb-3 text-[var(--text-main)]">
+                            Estrategia
+                        </h3>
+                        <p class="text-[var(--text-muted)]">
+                            Definimos el rumbo antes de ejecutar cualquier acción.
+                            Cada decisión tiene intención.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="glass rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+                        alt="Trabajo en equipo y diseño" class="w-full h-56 object-cover" />
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold mb-3 text-[var(--text-main)]">
+                            Identidad
+                        </h3>
+                        <p class="text-[var(--text-muted)]">
+                            Construimos una presencia coherente que diferencia
+                            tu marca en el mercado.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="glass rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition">
+                    <img src="https://images.unsplash.com/photo-1508385082359-f38ae991e8f2"
+                        alt="Crecimiento y resultados" class="w-full h-56 object-cover" />
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold mb-3 text-[var(--text-main)]">
+                            Crecimiento
+                        </h3>
+                        <p class="text-[var(--text-muted)]">
+                            Convertimos la estrategia en resultados medibles
+                            y crecimiento sostenible.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center mt-16">
+                <a href="contacto.html" class="btn-primary inline-block px-10 py-4 rounded-full text-lg font-medium">
+                    Activar Momentum
+                </a>
+            </div>
+
+        </div>
+    </section>
+    <!-- beneficios -->
+
+    <section class="py-32 bg-[var(--bg-main)] transition-colors duration-300 relative overflow-hidden" id="beneficios">
+        <div class="max-w-5xl mx-auto px-6">
+
+            <!-- Encabezado -->
+            <div class="mb-24">
+                <h2 class="text-4xl md:text-6xl font-bold text-[var(--text-main)] leading-tight">
+                    Cuando todo tiene dirección,
+                    <span class="text-gradient">todo cambia.</span>
+                </h2>
+                <p class="mt-8 text-xl text-[var(--text-muted)] max-w-3xl">
+                    Momentum no agrega más acciones.
+                    Elimina el ruido y convierte cada movimiento en parte de un sistema coherente.
+                </p>
+            </div>
+
+            <!-- Línea vertical decorativa -->
+            <div class="relative border-l border-[var(--border-soft)] pl-12 space-y-24">
+
+                <!-- Beneficio 1 -->
+                <div class="relative">
+                    <span class="absolute -left-[29px] top-2 w-4 h-4 bg-[var(--primary)] rounded-full"></span>
+                    <h3 class="text-3xl font-semibold text-[var(--text-main)] mb-4">
+                        Crecimiento medible
+                    </h3>
+                    <p class="text-lg text-[var(--text-muted)] leading-relaxed">
+                        Cada acción está conectada a métricas claras.
+                        No ejecutamos por intuición, sino por estructura.
+                        Lo que se mide, se optimiza.
+                    </p>
+                </div>
+
+                <!-- Beneficio 2 -->
+                <div class="relative">
+                    <span class="absolute -left-[29px] top-2 w-4 h-4 bg-[var(--secondary)] rounded-full"></span>
+                    <h3 class="text-3xl font-semibold text-[var(--text-main)] mb-4">
+                        Dirección estratégica
+                    </h3>
+                    <p class="text-lg text-[var(--text-muted)] leading-relaxed">
+                        No más acciones sueltas.
+                        Todo responde a un plan con visión a largo plazo.
+                        Cada pieza encaja en el sistema.
+                    </p>
+                </div>
+
+                <!-- Beneficio 3 -->
+                <div class="relative">
+                    <span class="absolute -left-[29px] top-2 w-4 h-4 bg-[var(--primary)] rounded-full"></span>
+                    <h3 class="text-3xl font-semibold text-[var(--text-main)] mb-4">
+                        Posicionamiento sólido
+                    </h3>
+                    <p class="text-lg text-[var(--text-muted)] leading-relaxed">
+                        Construimos una identidad que no compite por volumen,
+                        sino por percepción, claridad y autoridad.
+                    </p>
+                </div>
+
+                <!-- Beneficio 4 -->
+                <div class="relative">
+                    <span class="absolute -left-[29px] top-2 w-4 h-4 bg-[var(--secondary)] rounded-full"></span>
+                    <h3 class="text-3xl font-semibold text-[var(--text-main)] mb-4">
+                        Sistema escalable
+                    </h3>
+                    <p class="text-lg text-[var(--text-muted)] leading-relaxed">
+                        Diseñamos una base que crece contigo.
+                        Sin perder coherencia.
+                        Sin reiniciar cada seis meses.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-32 text-center">
+                <a href="contacto.html" class="btn-primary px-12 py-4 rounded-full text-lg inline-block">
+                    Activar Momentum
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Casos de exito -->
+
+    <section id="casos" class="py-32 bg-[var(--bg-card)] transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <!-- Encabezado -->
+            <div class="mb-28 text-center">
+                <h2 class="text-4xl md:text-6xl font-bold text-[var(--text-main)]">
+                    Casos de éxito
+                </h2>
+                <p class="mt-6 text-xl text-[var(--text-muted)] max-w-3xl mx-auto">
+                    No hablamos de promesas. Hablamos de resultados.
+                </p>
+            </div>
+
+            <!-- Caso 1 -->
+            <div class="grid md:grid-cols-2 gap-16 items-center mb-32">
+
+                <!-- Imagen -->
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd"
+                        class="rounded-3xl w-full object-cover" />
+                    <span class="absolute -top-8 -left-8 text-8xl font-bold text-[var(--border-soft)] select-none">
+                        01
+                    </span>
+                </div>
+
+                <!-- Texto -->
+                <div>
+                    <h3 class="text-3xl font-semibold text-[var(--text-main)] mb-6">
+                        Marca local → Referente regional
+                    </h3>
+                    <p class="text-lg text-[var(--text-muted)] leading-relaxed mb-6">
+                        Reestructuramos su posicionamiento, optimizamos su
+                        embudo digital y redefinimos su identidad.
+                    </p>
+
+                    <div class="flex gap-10 text-[var(--text-main)] font-semibold">
+                        <div>
+                            <div class="text-3xl text-[var(--primary)]">+230%</div>
+                            <div class="text-sm text-[var(--text-muted)]">Incremento en leads</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl text-[var(--secondary)]">4x</div>
+                            <div class="text-sm text-[var(--text-muted)]">Retorno de inversión</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Caso 2 -->
+            <div class="grid md:grid-cols-2 gap-16 items-center mb-32">
+
+                <!-- Texto primero -->
+                <div class="order-2 md:order-1">
+                    <h3 class="text-3xl font-semibold text-[var(--text-main)] mb-6">
+                        Startup estancada → Crecimiento sostenible
+                    </h3>
+                    <p class="text-lg text-[var(--text-muted)] leading-relaxed mb-6">
+                        Simplificamos su propuesta de valor y construimos un
+                        sistema escalable de adquisición.
+                    </p>
+
+                    <div class="flex gap-10 text-[var(--text-main)] font-semibold">
+                        <div>
+                            <div class="text-3xl text-[var(--primary)]">+180%</div>
+                            <div class="text-sm text-[var(--text-muted)]">Usuarios activos</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl text-[var(--secondary)]">-35%</div>
+                            <div class="text-sm text-[var(--text-muted)]">Costo por adquisición</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagen -->
+                <div class="relative order-1 md:order-2">
+                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+                        class="rounded-3xl w-full object-cover" />
+                    <span class="absolute -top-8 -right-8 text-8xl font-bold text-[var(--border-soft)] select-none">
+                        02
+                    </span>
+                </div>
+            </div>
+
+            <!-- Cierre -->
+            <div class="text-center mt-20">
+                <a href="contacto.html" class="btn-primary px-12 py-4 rounded-full text-lg inline-block">
+                    Crear el próximo caso de éxito
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sección de diferenciador -->
+
+
+    <section class="py-32 bg-[var(--bg-main)] transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <!-- Encabezado -->
+            <div class="text-center mb-28">
+                <h2 class="text-4xl md:text-6xl font-bold text-[var(--text-main)] leading-tight">
+                    No hacemos marketing.
+                    <span class="text-gradient">Construimos sistemas.</span>
+                </h2>
+                <p class="mt-8 text-xl text-[var(--text-muted)] max-w-3xl mx-auto">
+                    La diferencia no está en las herramientas.
+                    Está en la estructura.
+                </p>
+            </div>
+
+            <!-- Comparativa -->
+            <div class="grid md:grid-cols-2 gap-20 items-start">
+
+                <!-- Lo común -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-[var(--text-muted)] mb-10">
+                        Lo tradicional
+                    </h3>
+
+                    <div class="space-y-10 text-lg text-[var(--text-muted)]">
+                        <p>Acciones aisladas sin dirección clara.</p>
+                        <p>Campañas reactivas.</p>
+                        <p>Resultados inconsistentes.</p>
+                        <p>Dependencia constante de nuevos esfuerzos.</p>
+                    </div>
+                </div>
+
+                <!-- Momentum -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-[var(--text-main)] mb-10">
+                        Momentum
+                    </h3>
+
+                    <div class="space-y-10 text-lg text-[var(--text-main)]">
+                        <p class="relative pl-8">
+                            <span class="absolute left-0 top-2 w-3 h-3 bg-[var(--primary)] rounded-full"></span>
+                            Sistema estratégico integrado.
+                        </p>
+
+                        <p class="relative pl-8">
+                            <span class="absolute left-0 top-2 w-3 h-3 bg-[var(--secondary)] rounded-full"></span>
+                            Decisiones basadas en estructura.
+                        </p>
+
+                        <p class="relative pl-8">
+                            <span class="absolute left-0 top-2 w-3 h-3 bg-[var(--primary)] rounded-full"></span>
+                            Resultados medibles y escalables.
+                        </p>
+
+                        <p class="relative pl-8">
+                            <span class="absolute left-0 top-2 w-3 h-3 bg-[var(--secondary)] rounded-full"></span>
+                            Crecimiento sostenible a largo plazo.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Declaración final -->
+            <div class="mt-32 text-center max-w-3xl mx-auto">
+                <p class="text-2xl md:text-3xl font-semibold text-[var(--text-main)] leading-relaxed">
+                    No competimos por hacer más ruido.
+                    Competimos por construir algo que realmente perdure.
+                </p>
+
+                <div class="mt-10">
+                    <a href="contacto.html" class="btn-primary px-12 py-4 rounded-full text-lg inline-block">
+                        Construir con Momentum
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Sistemas de Crecimiento -->
+
+    <section id="planes" class="py-32 bg-[var(--bg-card)] transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <!-- Encabezado -->
+            <div class="text-center mb-24">
+                <h2 class="text-4xl md:text-6xl font-bold text-[var(--text-main)]">
+                    Sistemas de crecimiento
+                </h2>
+                <p class="mt-6 text-xl text-[var(--text-muted)] max-w-3xl mx-auto">
+                    No vendemos planes cerrados. Diseñamos estrategias según el momento real de tu negocio.
+                </p>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid md:grid-cols-3 gap-12">
+
+                <!-- Impulso -->
+                <div
+                    class="p-10 rounded-2xl border border-[var(--border-color)] hover:shadow-xl transition-all duration-300 flex flex-col">
+
+                    <h3 class="text-2xl font-semibold text-[var(--text-main)]">
+                        Impulso Estratégico
+                    </h3>
+
+                    <p class="mt-4 text-[var(--text-muted)]">
+                        Para marcas que necesitan claridad, dirección y una base sólida para crecer.
+                    </p>
+
+                    <div class="mt-8 text-2xl font-semibold text-[var(--text-main)]">
+                        Ideal para comenzar
+                    </div>
+
+                    <ul class="mt-8 space-y-3 text-[var(--text-muted)] flex-grow">
+                        <li>Diagnóstico profundo</li>
+                        <li>Definición de posicionamiento</li>
+                        <li>Roadmap estratégico inicial</li>
+                    </ul>
+
+                    <a href="contacto.html"
+                        class="mt-10 border border-[var(--primary)] text-[var(--primary)] text-center py-3 rounded-full hover:bg-[var(--primary)] hover:text-white transition-all duration-300">
+                        Solicitar diagnóstico
+                    </a>
+
+                </div>
+
+                <!-- Crecimiento (Destacado) -->
+                <div
+                    class="p-10 rounded-2xl border-2 border-[var(--primary)] shadow-xl flex flex-col relative scale-105">
+
+                    <div
+                        class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[var(--primary)] text-white text-sm px-4 py-1 rounded-full">
+                        Más solicitado
+                    </div>
+
+                    <h3 class="text-2xl font-semibold text-[var(--text-main)]">
+                        Crecimiento Estratégico
+                    </h3>
+
+                    <p class="mt-4 text-[var(--text-muted)]">
+                        Sistema integral para escalar con control, datos y optimización continua.
+                    </p>
+
+                    <div class="mt-8 text-2xl font-semibold text-[var(--text-main)]">
+                        Para negocios en expansión
+                    </div>
+
+                    <ul class="mt-8 space-y-3 text-[var(--text-muted)] flex-grow">
+                        <li>Estrategia multicanal</li>
+                        <li>Gestión y optimización de campañas</li>
+                        <li>Reportes estratégicos y métricas clave</li>
+                    </ul>
+
+                    <a href="contacto.html" class="mt-10 btn-primary text-center py-3 rounded-full">
+                        Agendar consultoría
+                    </a>
+
+                </div>
+
+                <!-- Dominio -->
+                <div
+                    class="p-10 rounded-2xl border border-[var(--border-color)] hover:shadow-xl transition-all duration-300 flex flex-col">
+
+                    <h3 class="text-2xl font-semibold text-[var(--text-main)]">
+                        Dominio de Marca
+                    </h3>
+
+                    <p class="mt-4 text-[var(--text-muted)]">
+                        Expansión avanzada, automatización y posicionamiento fuerte en el mercado.
+                    </p>
+
+                    <div class="mt-8 text-2xl font-semibold text-[var(--text-main)]">
+                        Proyecto personalizado
+                    </div>
+
+                    <ul class="mt-8 space-y-3 text-[var(--text-muted)] flex-grow">
+                        <li>Consultoría estratégica avanzada</li>
+                        <li>Automatización y escalabilidad</li>
+                        <li>Arquitectura de crecimiento sostenible</li>
+                    </ul>
+
+                    <a href="contacto.html"
+                        class="mt-10 border border-[var(--primary)] text-[var(--primary)] text-center py-3 rounded-full hover:bg-[var(--primary)] hover:text-white transition-all duration-300">
+                        Solicitar propuesta
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    </section>
+    <!-- Cierre -->
+
+    <section class="py-32 bg-[var(--bg-main)] text-center transition-colors duration-300">
+        <div class="max-w-4xl mx-auto px-6">
+
+            <h2 class="text-4xl md:text-6xl font-bold text-[var(--text-main)] leading-tight">
+                Es momento de construir algo que realmente crezca.
+            </h2>
+
+            <p class="mt-8 text-xl text-[var(--text-muted)] max-w-2xl mx-auto">
+                La estrategia correcta cambia el ritmo de una marca.
+                El siguiente paso depende de ti.
+            </p>
+
+            <div class="mt-14 flex flex-col sm:flex-row justify-center gap-6">
+
+
+                <a href="/contacto.html" class="btn-primary px-12 py-4 rounded-full text-lg">
+                    Activar Momentum
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- footer -->
+
+    <footer class="bg-[var(--bg-main)] border-t border-[var(--border-color)] py-14">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <!-- Línea superior -->
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+
+                <!-- Marca + frase -->
+                <div>
+                    <div class="text-2xl font-bold text-[var(--text-main)]">
+                        Momentum
+                    </div>
+                    <p class="text-sm text-[var(--text-muted)] mt-2">
+                        Donde la estrategia se convierte en crecimiento real.
+                    </p>
+                </div>
+
+                <!-- Navegación -->
+                <div class="flex gap-8 text-sm text-[var(--text-muted)]">
+                    <a href="#beneficios" class="hover:text-[var(--primary)] transition">
+                        Beneficios
+                    </a>
+                    <a href="#planes" class="hover:text-[var(--primary)] transition">
+                        sistemas de crecimiento
+                    </a>
+                    <a href="#" class="hover:text-[var(--primary)] transition">
+                        Privacidad
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Línea inferior -->
+            <div
+                class="mt-10 pt-6 border-t border-[var(--border-color)] flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[var(--text-muted)]">
+
+                <div>
+                    © 2026 Momentum. Todos los derechos reservados.
+                </div>
+
+                <div>
+                    Construido con visión a largo plazo.
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>
